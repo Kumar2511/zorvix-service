@@ -5,148 +5,114 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
 
-    /* MAIN BACKGROUND */
-    --background: 210 35% 9%;
-    --foreground: 210 40% 98%;
+:root{
 
-    /* CARD COLORS */
-    --card: 210 25% 16%;
-    --card-foreground: 210 40% 98%;
+/* MAIN COLOR PALETTE */
 
-    /* PRIMARY ACCENT */
-    --primary: 195 85% 60%;
-    --primary-foreground: 0 0% 100%;
+--deep-black:#070B10;
+--navbar-bg:#0A0E14;
+--main-bg:#152831;
+--card-bg:#1E3A46;
+--secondary:#58717D;
+--border:#B4C3CC;
+--text-main:#F4FEFE;
 
-    /* SECONDARY */
-    --secondary: 210 20% 18%;
-    --secondary-foreground: 210 40% 98%;
+--radius:0.75rem;
 
-    /* MUTED */
-    --muted: 210 18% 22%;
-    --muted-foreground: 210 20% 75%;
+/* HERO BACKGROUND */
 
-    /* ACCENT */
-    --accent: 195 85% 60%;
-    --accent-foreground: 0 0% 100%;
+--hero-gradient:
+radial-gradient(circle at 20% 25%, rgba(88,113,125,0.35), transparent 40%),
+radial-gradient(circle at 85% 30%, rgba(30,58,70,0.45), transparent 45%),
+radial-gradient(circle at 60% 70%, rgba(21,40,49,0.55), transparent 50%),
+linear-gradient(
+135deg,
+#070B10 0%,
+#0A0E14 25%,
+#152831 55%,
+#000608 75%,
+#070B10 100%
+);
 
-    /* BORDERS */
-    --border: 210 20% 24%;
-    --input: 210 20% 24%;
-    --ring: 195 85% 60%;
+/* GLASS EFFECT */
 
-    --radius: 0.75rem;
-
-    /* HERO BACKGROUND GRADIENT */
-    --hero-gradient:
-      radial-gradient(circle at 25% 25%, rgba(65,78,87,0.35), transparent 45%),
-      radial-gradient(circle at 80% 40%, rgba(34,46,55,0.40), transparent 50%),
-      linear-gradient(
-        135deg,
-        #111920 0%,
-        #1a242d 30%,
-        #222E37 65%,
-        #414E57 100%
-      );
-
-    /* GLASS EFFECT */
-    --glass-bg: rgba(34, 46, 55, 0.45);
-    --glass-border: rgba(255,255,255,0.08);
-
-    /* SHADOWS */
-    --shadow-sm: 0 2px 6px rgba(0,0,0,0.25);
-    --shadow-md: 0 10px 30px rgba(0,0,0,0.35);
-    --shadow-lg: 0 20px 60px rgba(0,0,0,0.45);
-    --shadow-primary: 0 10px 40px rgba(1, 7, 14, 0.35);
-  }
-}
-
-@layer base {
-
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply text-foreground font-body antialiased;
-
-    /* BACKGROUND LIKE IMAGE */
-
-    background:
-      radial-gradient(circle at 20% 20%, rgba(65,78,87,0.25), transparent 40%),
-      radial-gradient(circle at 80% 30%, rgba(34,46,55,0.35), transparent 45%),
-      radial-gradient(circle at 50% 90%, rgba(17,25,32,0.8), transparent 60%),
-      linear-gradient(
-        135deg,
-        #111920 0%,
-        #1a242d 30%,
-        #222E37 65%,
-        #414E57 100%
-      );
-
-    min-height: 100vh;
-  }
-
-  /* SOFT LIGHT EFFECT */
-
-  body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:radial-gradient(circle at 50% 40%,rgba(255,255,255,0.04),transparent 60%);
-    pointer-events:none;
-  }
-
-  h1,h2,h3,h4,h5,h6 {
-    @apply font-heading;
-    color:#ffffff;
-  }
-
-  p {
-    color:#b8c3cc;
-  }
+--glass-bg:rgba(30,58,70,0.60);
+--glass-border:rgba(180,195,204,0.18);
 
 }
 
-@layer utilities {
+}
 
-  /* TEXT GRADIENT */
+@layer base{
 
-  .text-gradient{
-    background: linear-gradient(90deg,#60a5fa,#38bdf8);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-  }
+body{
 
-  /* HERO BACKGROUND */
+font-family:'DM Sans',sans-serif;
+color:var(--text-main);
 
-  .bg-hero-gradient{
-    background:var(--hero-gradient);
-  }
+/* EXACT BACKGROUND STYLE */
 
-  /* GLASS CARD STYLE */
+background:
+radial-gradient(circle at 15% 20%, rgba(88,113,125,0.25), transparent 35%),
+radial-gradient(circle at 85% 25%, rgba(30,58,70,0.35), transparent 40%),
+radial-gradient(circle at 50% 80%, rgba(21,40,49,0.45), transparent 45%),
+linear-gradient(
+135deg,
+#070B10 0%,
+#0A0E14 35%,
+#152831 65%,
+#080f11 85%,
+#070B10 100%
+);
 
-  .glass{
-    background:var(--glass-bg);
-    backdrop-filter: blur(14px);
-    border:1px solid var(--glass-border);
-  }
+min-height:100vh;
 
-  /* BUTTON GLOW */
+}
 
-  .shadow-primary-glow{
-    box-shadow:var(--shadow-primary);
-  }
+h1,h2,h3,h4,h5,h6{
+font-family:'Space Grotesk',sans-serif;
+color:var(--text-main);
+}
 
-  /* HERO TEXT */
+p{
+color:#B4C3CC;
+}
 
-  .hero-title{
-    color:#ffffff;
-  }
+}
 
-  .hero-subtitle{
-    color:#cbd5e1;
-  }
+@layer utilities{
+
+/* HERO SECTION */
+
+.bg-hero-gradient{
+background:var(--hero-gradient);
+}
+
+/* CARD STYLE */
+
+.card-dark{
+background:rgba(30,58,70,0.65);
+border:1px solid rgba(180,195,204,0.20);
+backdrop-filter:blur(14px);
+border-radius:var(--radius);
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* NAVBAR */
+
+.navbar-dark{
+background:rgba(10,14,20,0.75);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(180,195,204,0.10);
+}
+
+/* TEXT GRADIENT */
+
+.text-gradient{
+background:linear-gradient(90deg,#58717D,#B4C3CC);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
 }

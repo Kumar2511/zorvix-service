@@ -47,9 +47,9 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-semibold text-sm mb-4">Services</h4>
           <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-            <span>Website Design & Development</span>
-            <span>Logo Design</span>
-            <span>SEO Optimization</span>
+            <span>Custom Web Development</span>
+            <span>Logo & Brand Identity Design</span>
+            <span>SEO & Digital Marketing</span>
           </div>
         </div>
         <div>
