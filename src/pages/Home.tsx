@@ -320,6 +320,7 @@ const Home = () => (
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-heading font-bold">Frequently Asked Questions</h2>
             <p className="mt-3 text-muted-foreground">Got questions? We've got answers.</p>
+            
           </div>
         </FadeIn>
         <FadeIn delay={0.1}>
